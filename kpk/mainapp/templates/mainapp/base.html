@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+    {% block css %}
+    {% endblock %}
+    {% block js %}
+    {% endblock %}
+</head>
+<body>
+<div class="main-menu">
+    <ul>
+        <li>
+            <a href="/">Главная</a>
+        </li>
+        <li>
+            <a href="/catalog/">Каталог</a>
+        </li>
+        <li>
+            <a href="/basket/">Корзина</a>
+        </li>
+    </ul>
+</div>
+{% block content %}
+{% endblock %}
+</body>
+</html>

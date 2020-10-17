@@ -1,23 +1,5 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Главная</title>
-</head>
-<body>
-<div class="main-menu">
-    <ul>
-        <li>
-            <a href="/">Главная</a>
-        </li>
-        <li>
-            <a href="/catalog/">Каталог</a>
-        </li>
-        <li>
-            <a href="/basket/">Корзина</a>
-        </li>
-    </ul>
-</div>
-<h1>Ура, проект работает!</h1>
-</body>
-</html>
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+    <h1>Ура, проект работает!</h1>
+{% endblock %}
