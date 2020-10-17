@@ -4,34 +4,8 @@
     <meta charset="UTF-8">
     <title>Главная</title>
     {% block css %}
+        <link rel="stylesheet" href="/static/css/main.css">
     {% endblock %}
-    <style>
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            width: 80%;
-            background-color: #f1f1f1;
-            display: inline-block;
-        }
-        li {
-            float: left;
-        }
-
-        li a {
-            display: block;
-            color: #000;
-            padding: 8px 16px;
-            text-decoration: none;
-        }
-
-        li a:hover {
-            background-color: #555;
-            color: white;
-            transition: 0.3s;
-        }
-
-    </style>
     {% block js %}
     {% endblock %}
 </head>
