@@ -19,5 +19,8 @@ from django.urls import path
 
 urlpatterns = [
     path('', mainapp.index),
+    path('catalog/', mainapp.catalog),
+    path('basket/', mainapp.basket),
+
     path('admin/', admin.site.urls),
 ]
