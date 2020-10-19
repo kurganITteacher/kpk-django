@@ -8,6 +8,10 @@ class SubjectCategory(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name = 'Направление подготовки'
+        verbose_name_plural = 'Направления подготовки'
+
 
 class Course(models.Model):
     category = models.ForeignKey(SubjectCategory,
