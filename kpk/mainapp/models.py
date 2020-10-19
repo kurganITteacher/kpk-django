@@ -23,8 +23,3 @@ class Course(models.Model):
 
     def __str__(self):
         return self.name
-
-# 5 category
-# 8 items
-# 5 + 40 = 45 items
-# 12:30
