@@ -10,7 +10,8 @@ def index(request):
 def catalog(request):
     categories = SubjectCategory.objects.all()
     context = {
-        'categories': categories
+        'categories': categories,
+        'page_title': 'каталог'
     }
 
     return render(request, 'mainapp/catalog.html', context)
