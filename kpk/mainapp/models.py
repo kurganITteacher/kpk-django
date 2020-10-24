@@ -25,6 +25,7 @@ class Course(models.Model):
 
     category = models.ForeignKey(SubjectCategory,
                                  on_delete=models.CASCADE)
+    # slug = models.SlugField()  # name -> some function -> slug
     name = models.CharField(max_length=200)
     desc = models.TextField(blank=True)
     hours = models.IntegerField(default=0)
