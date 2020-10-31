@@ -6,7 +6,9 @@
         <ul>
             {% for item in courses %}
                 <li>
-                    <a href="#">{{ item }}</a>
+                    <a href="{% url 'course_page' item.pk %}">
+                        {{ item }}
+                    </a>
                 </li>
             {% endfor %}
         </ul>

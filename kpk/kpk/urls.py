@@ -23,6 +23,7 @@ urlpatterns = [
 
     path('catalog/category/<int:pk>/', mainapp.catalog_page, name='catalog_page'),
     # path('catalog/category/<str:slug>/', mainapp.catalog_page),
+    path('catalog/course/<int:pk>/', mainapp.course_page, name='course_page'),
 
     path('basket/', mainapp.basket, name='basket'),
 

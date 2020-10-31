@@ -1,0 +1,17 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+    <h1>Курс</h1>
+    <p class="course-name">
+        {{ course.name }}
+    </p>
+    <p class="course-level">
+        уровень: {{ course.get_level_display }}
+    </p>
+    <p class="course-desc">
+        описание: {{ course.desc }}
+    </p>
+    <p class="course-hours">
+        часов: {{ course.hours }}
+    </p>
+{% endblock %}

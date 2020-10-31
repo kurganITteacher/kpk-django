@@ -22,17 +22,18 @@ def basket(request):
 
 
 def catalog_page(request, pk):
-    # catalog/category/<int:pk>/
-    # catalog/mobile/notebooks/1210762/ => 1210762 - pk
-    # https://www.citilink.ru/catalog/mobile/notebooks/1210762/ => 1210762 - pk
-    # catalog/category/<str:slug>/
-    # catalog/17a89aab16404e77/videokarty/ => videokarty - slug
-    # https://www.dns-shop.ru/catalog/17a89aab16404e77/videokarty/ => videokarty - slug
-    # items = SubjectCategory.objects.all()
-    # courses = Course.objects.filter(category__slug=slug)  # WHERE ...
     courses = Course.objects.filter(category_id=pk)
     context = {
         'courses': courses,
         'page_title': 'страница каталога'
     }
     return render(request, 'mainapp/catalog_page.html', context)
+
+
+def course_page(request, pk):
+    course = Course.objects.get(pk=pk)
+    context = {
+        'course': course,
+        'page_title': 'страница курса'
+    }
+    return render(request, 'mainapp/course_page.html', context)
