@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # own apps
     'mainapp',
+    'authapp',
 ]
 
 MIDDLEWARE = [
