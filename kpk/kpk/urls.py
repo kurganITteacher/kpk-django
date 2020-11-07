@@ -21,9 +21,8 @@ urlpatterns = [
     path('', mainapp.index, name='index'),
     path('catalog/', mainapp.catalog, name='catalog'),
 
-    path('catalog/category/<int:pk>/', mainapp.catalog_page, name='catalog_page'),
-    # path('catalog/category/<str:slug>/', mainapp.catalog_page),
-    path('catalog/course/<int:pk>/', mainapp.course_page, name='course_page'),
+    path('catalog/category/<int:category_pk>/', mainapp.catalog_section, name='catalog_section'),
+    path('catalog/course/<int:course_pk>/', mainapp.course_page, name='course_page'),
 
     path('basket/', mainapp.basket, name='basket'),
 
