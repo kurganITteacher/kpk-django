@@ -3,12 +3,16 @@
 {% block content %}
     <div class="login-form">
         <div class="form-title">Вход в систему</div>
-        <form class="login-form" method="post">
+        <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
             <input type="submit"
                    class="btn btn-success form-control"
                    value="войти">
         </form>
+        <br>
+        <a class="btn btn-info form-control" href="{% url 'auth:register' %}">
+            зарегистрироваться
+        </a>
     </div>
 {% endblock %}

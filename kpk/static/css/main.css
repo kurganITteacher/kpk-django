@@ -24,7 +24,7 @@
     transition: 0.3s;
 }
 
-.login-form {
+.login-form, .register-form {
     margin: 5vh auto;
     width: 50%;
 }
