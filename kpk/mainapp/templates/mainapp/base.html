@@ -13,13 +13,13 @@
 <div class="main-menu">
     <ul>
         <li>
-            <a href="/">Главная</a>
+            <a href="{% url 'main:index' %}">Главная</a>
         </li>
         <li>
-            <a href="/catalog/">Каталог</a>
+            <a href="{% url 'main:catalog' %}">Каталог</a>
         </li>
         <li>
-            <a href="/basket/">Корзина</a>
+            <a href="{% url 'basket' %}">Корзина</a>
         </li>
     </ul>
 </div>

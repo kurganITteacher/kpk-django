@@ -6,7 +6,7 @@
         <ul>
             {% for item in courses %}
                 <li>
-                    <a href="{% url 'course_page' item.pk %}">
+                    <a href="{% url 'main:course_page' item.pk %}">
                         {{ item }}
                     </a>
                 </li>

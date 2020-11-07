@@ -15,14 +15,10 @@ Including another URLconf
 """
 import mainapp.views as mainapp
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 urlpatterns = [
-    path('', mainapp.index, name='index'),
-    path('catalog/', mainapp.catalog, name='catalog'),
-
-    path('catalog/category/<int:category_pk>/', mainapp.catalog_section, name='catalog_section'),
-    path('catalog/course/<int:course_pk>/', mainapp.course_page, name='course_page'),
+    path('', include('mainapp.urls', namespace='main')),
 
     path('basket/', mainapp.basket, name='basket'),
 
