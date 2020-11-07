@@ -23,3 +23,14 @@
     color: white;
     transition: 0.3s;
 }
+
+.login-form {
+    margin: 5vh auto;
+    width: 50%;
+}
+
+.form-title {
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+}

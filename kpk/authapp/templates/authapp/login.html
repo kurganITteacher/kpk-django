@@ -2,9 +2,13 @@
 
 {% block content %}
     <div class="login-form">
-        <h2>Вход в систему</h2>
-        <form class="login-form">
+        <div class="form-title">Вход в систему</div>
+        <form class="login-form" method="post">
+            {% csrf_token %}
             {{ form.as_p }}
+            <input type="submit"
+                   class="btn btn-success form-control"
+                   value="войти">
         </form>
     </div>
 {% endblock %}
