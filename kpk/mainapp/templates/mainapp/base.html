@@ -25,7 +25,11 @@
             <a href="{% url 'basket' %}">Корзина</a>
         </li>
         <li>
-            <a href="{% url 'auth:login' %}">Войти</a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'auth:logout' %}">Выйти</a>
+            {% else %}
+                <a href="{% url 'auth:login' %}">Войти</a>
+            {% endif %}
         </li>
     </ul>
 </div>

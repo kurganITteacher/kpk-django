@@ -1,8 +1,8 @@
 import django.contrib.auth as auth
+from authapp.forms import LoginForm
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-
-from authapp.forms import LoginForm
+from django.urls import reverse
 
 
 def login(request):
@@ -10,7 +10,8 @@ def login(request):
         form = LoginForm(data=request.POST)
         if form.is_valid():
             auth.login(request, form.get_user())
-            return HttpResponseRedirect('/')
+            # return HttpResponseRedirect('/')
+            return HttpResponseRedirect(reverse('main:index'))
     else:
         form = LoginForm()
 
@@ -19,3 +20,8 @@ def login(request):
         'form': form,
     }
     return render(request, 'authapp/login.html', context)
+
+
+def logout(request):
+    auth.logout(request)
+    return HttpResponseRedirect(reverse('main:index'))
