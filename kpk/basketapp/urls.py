@@ -6,3 +6,4 @@ app_name = 'basketapp'
 urlpatterns = [
     path('', basketapp.index, name='index'),
 ]
+
