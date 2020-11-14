@@ -5,5 +5,6 @@ app_name = 'basketapp'
 
 urlpatterns = [
     path('', basketapp.index, name='index'),
+    path('add/<int:course_id>/', basketapp.add, name='add'),
 ]
 
