@@ -34,3 +34,7 @@
     font-size: large;
     font-weight: bold;
 }
+
+.basket li {
+    margin: 1vh;
+}
