@@ -1,6 +1,6 @@
 {% extends 'basketapp/base.html' %}
 
 {% block content %}
-    <h2>Ваша корзина, {{ user.username }}</h2>
+    <h2>Ваша корзина, {{ user.username|capfirst }}</h2>
 
 {% endblock %}
