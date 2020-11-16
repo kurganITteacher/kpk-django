@@ -14,4 +14,8 @@
     <p class="course-hours">
         часов: {{ course.hours }}
     </p>
+    <a href="{% url 'basket:add' course.id %}"
+       class="btn btn-success">
+        записаться
+    </a>
 {% endblock %}

@@ -1,6 +1,18 @@
 {% extends 'basketapp/base.html' %}
 
 {% block content %}
-    <h2>Ваша корзина, {{ user.username|capfirst }}</h2>
-
+    <div class="basket">
+        <h2>Ваши курсы, {{ user.username|capfirst }}</h2>
+        <ul>
+            {% for item in object_list %}
+                <li class="basket-item-{{ item.pk }}">
+                    {{ item.to_html|safe }}
+                    <a href="{% url 'basket:remove' item.pk %}"
+                       class="btn btn-danger">
+                        удалить
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
 {% endblock %}
