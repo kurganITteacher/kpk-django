@@ -1,10 +1,12 @@
 from basketapp.models import CourseBasket
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import render
 from django.urls import reverse
 from mainapp.models import Course
 
 
+@login_required
 def index(request):
     items = CourseBasket.objects.filter(user=request.user)
     context = {
@@ -14,6 +16,7 @@ def index(request):
     return render(request, 'basketapp/basket.html', context)
 
 
+@login_required
 def add(request, course_id):
     course = Course.objects.get(pk=course_id)
     CourseBasket.objects.get_or_create(
@@ -26,6 +29,7 @@ def add(request, course_id):
     )
 
 
+@login_required
 def remove(request, course_basket_id):
     if request.is_ajax():
         item = CourseBasket.objects.get(id=course_basket_id)
