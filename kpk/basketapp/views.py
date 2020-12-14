@@ -16,6 +16,16 @@ def index(request):
     return render(request, 'basketapp/basket.html', context)
 
 
+# @login_required
+# def basket_detailed(request):
+#     items = CourseBasket.objects.filter(user=request.user)
+#     context = {
+#         'object_list': items,
+#     }
+#
+#     return render(request, 'basketapp/basket_detailed.html', context)
+
+
 @login_required
 def add(request, course_id):
     course = Course.objects.get(pk=course_id)
