@@ -25,7 +25,7 @@ class Course(models.Model):
     )
 
     category = models.ForeignKey(SubjectCategory,
-                                 on_delete=models.CASCADE)
+                                 on_delete=models.CASCADE)  # category_id
     # slug = models.SlugField()  # name -> some function -> slug
     name = models.CharField(max_length=200)
     desc = models.TextField(blank=True)
@@ -35,7 +35,7 @@ class Course(models.Model):
     picture = models.ImageField(upload_to='course_images', blank=True)
 
     def __str__(self):
-        return self.name
+        return f'{self.name} ({self.category.name})'  # 2 queries!!!
 
     class Meta:
         verbose_name = 'Курс'

@@ -3,7 +3,6 @@ from django.views.generic import ListView
 
 from mainapp.models import SubjectCategory, Course
 
-
 # def index(request):
 #     return render(request, 'mainapp/index.html')
 
@@ -75,7 +74,10 @@ class CatalogListView(PageTitleMixin, ListView):
 
 # DetailView -> object, category_pk -> pk
 def catalog_section(request, category_pk):
-    courses = Course.objects.filter(category_id=category_pk)
+    # courses = Course.objects.filter(category_id=category_pk)
+    courses = Course.objects.select_related('category').filter(category_id=category_pk)
+    # BIG single query -> memory consumption
+    print(courses.query)
     context = {
         'courses': courses,
         'page_title': 'страница каталога'
