@@ -32,6 +32,7 @@ class Course(models.Model):
     hours = models.IntegerField(default=0, db_index=True)
     level = models.CharField(max_length=1, choices=LEVEL_CHOICES, default=EASY, db_index=True)
     is_active = models.BooleanField(default=True, db_index=True)
+    picture = models.ImageField(upload_to='course_images', blank=True)
 
     def __str__(self):
         return self.name
