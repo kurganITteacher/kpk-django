@@ -4,7 +4,7 @@
     <h1>Каталог</h1>
     <div class="catalog-menu">
         <ul>
-            {% for item in categories %}
+            {% for item in object_list %}
                 <li>
                     <a href="{% url 'main:catalog_section' item.pk %}">
                         {{ item }}
