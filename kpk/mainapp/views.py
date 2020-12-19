@@ -4,8 +4,8 @@ from django.views.generic import ListView
 from mainapp.models import SubjectCategory, Course
 
 
-def index(request):
-    return render(request, 'mainapp/index.html')
+# def index(request):
+#     return render(request, 'mainapp/index.html')
 
 
 # # FBV - Function Based Views

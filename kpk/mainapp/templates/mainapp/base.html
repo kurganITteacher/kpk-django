@@ -2,7 +2,9 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>{{ page_title|default:"кпк"|capfirst }}</title>
+    {% block title %}
+        <title>{{ page_title|default:"кпк"|capfirst }}</title>
+    {% endblock %}
     {% block css %}
         <link rel="stylesheet" href="/static/css/bootstrap.min.css">
         <link rel="stylesheet" href="/static/css/main.css">
